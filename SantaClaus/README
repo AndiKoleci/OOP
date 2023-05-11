@@ -1,0 +1,27 @@
+Proiect - Etapa 2 - Santa Claus is coming to ACS students
+Koleci Alexandru, 323CD
+
+Pentru implementarea proiectului am folosit 13 clase:
+
+input - clasa Singleton care retine toate campurile din fisierul JSON
+Simulation - clasa in care se intampla tot programul in sine
+Child, Gift, AnnualChange, ChildUpdate, InitialData, Santa - clase folosite
+pentru a retine tipurile principale de date ale problemei
+output - clasa in care se genereaza fisierul de output
+AnnualChildren, Children, OutputChild, OutputGift - clase folosite doar pentru a face
+fisierul JSON din output sa aiba acele rubrici - annualChildren si apoi children. OutputChild si
+OutputGift au doar field-urile cerute in JSON, adica lipsesc niceScoreBonus si elf,
+respectiv quantity.
+
+Programul incepe in Main, unde se creeaza, pentru fiecare test, string-ul cu path-ul testului
+Citesc fisierul de input in clasa input, dupa care incepe simularea procesului de dat cadouri
+In fiecare an elimin copii trecuti de 18 ani, calculez bugetul pentru fiecare si aplic modificarile
+pe care le fac elfii Pink si Black. Dupa aceea impart cadourile si dupa aplic modificarile
+efectuate de elful Yellow.
+Apoi adaug toti copii din lista curenta in viitorul output, folosing clasele OutputChild si
+OutputGift.
+Cresc varsta fiecarui copil si aplic annualChanges. Dupa care se trece la urmatoarea runda.
+La finalul anilor, voi crea obiectul output necesar pentru crearea fisierului JSON de output.
+
+Pentru a da fisierului JSON de output formatul cerut, am creat clasele Children, cu campul
+children, si clasa AnnualChildren, cu campul annualChildren.
