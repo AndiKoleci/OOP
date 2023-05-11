@@ -1,0 +1,37 @@
+VideosDB - Koleci Alexandru, 323CD
+
+Main:
+Programul incepe in Main, de unde generez un database cu datele din Input
+Database-ul e Singleton, si va fi reumplut la fiecare test
+Iau pe rand fiecare comanda si o execut (action.run())
+Scriu raspunsul pentru fiecare test in fileWriter, acest raspuns fiind un JSON
+Astfel, in fisierul de raspuns se scrie tot continutul JSON-ului din database
+
+Database:
+Clasa de tip Singleton care retine toate datele din input
+Goleste campurile folosite la testul de dinainte si le umple cu ce se afla in input
+Functia addElement adauga in JSON-ul din database un element ce reprezinta raspunsul la action-uri
+
+Action:
+Clasa ce reprezinta fiecare comanda primita
+In functia run() se executa fiecare comanda, in functie de tipul comenziiss
+Dupa ce comanda este executata, raspunsul returnat de aceasta e adaugat in JSON-ul din database
+
+Clasele Movie si Serial - mostenesc clasa Video, acestea reprezinta filmele si serialele
+Clasa Season - Sezon al unui serial
+Clasa Actor - retine informatii despre un actor
+Clasa User - retine informatii despre un user
+
+Clasa Rating - retine un nume si o nota.
+Daca ratingul aparinte unui Video, atunci contine numele videoului si ratingul pt acesta
+Daca ratingul apartine unui User, atunci contine numele userului care l a dat si ratingul
+
+Observatii legate de implementarea functiilor:
+Explicatii legate de scopul functiilor se afla in Javadoc-ul aferent fiecarei functii
+Am realizat ca exista functii de sortat liste foarte tarziu, asa ca am creat multe functii
+care sorteaza crescator/descrescator anumite liste, in functie de sortType-ul actiunii
+Nu am timp sa refac tot codul folosind acele functii de sortare a listelor, si sper ca
+este in regula ca am folosit functiile facute de mine chiar daca a durat mai multe linii
+de cod
+
+Programul are parcursul Main -> Database -> Actions -> Database -> Main (returns)
